@@ -6,7 +6,7 @@ import bookRoute from './routes/booksRoute.js';
 import cors from 'cors';
 const app = express();
 dotenv.config();
-
+app.use(express.static('dist'))
 app.use(cors());
 
 // app.use(
