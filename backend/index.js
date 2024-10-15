@@ -21,12 +21,12 @@ app.use(express.json());
 
 
 //Route for get a response from server
-app.get('/',(request,response)=>{
-    console.log(request)
-    return response.send('Welcome To MERN Stack Tutorial')
-});
+// app.get('/',(request,response)=>{
+//     console.log(request)
+//     return response.send('Welcome To MERN Stack Tutorial')
+// });
 
-app.use('/books',bookRoute);
+app.use('/api/books',bookRoute);
 
 const mongoDBURL = process.env.mongoDBURL
 mongoose

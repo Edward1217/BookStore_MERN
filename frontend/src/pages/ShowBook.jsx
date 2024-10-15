@@ -11,7 +11,7 @@ function ShowBook() {
     useEffect(()=>{
         setLoading(true);
         axios
-            .get(`http://localhost:3001/books/${id}`)
+            .get(`http://localhost:3001/api/books/${id}`)
             .then((response)=>{
                 setBook(response.data.book); //****notice the name of database
                 setLoading(false);
