@@ -18,7 +18,7 @@ function CreateBooks(props) {
         };
         setLoading(true);
         axios
-            .post('http://localhost:3001/books',data)
+            .post('/api/books',data)
             .then(()=>{
                 setLoading(false);
                 navigate('/')
