@@ -34,7 +34,7 @@ function EditBook(props) {
             publishYear
         };
         setLoading(true);
-        axios.put(`http://localhost:3001/books/${id}`,data)
+        axios.put(`/api/books/${id}`,data)
             .then((response)=>{
                 setLoading(false)
                 console.log(response);
