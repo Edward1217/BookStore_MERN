@@ -26,7 +26,7 @@ app.use(express.json());
 //     return response.send('Welcome To MERN Stack Tutorial')
 // });
 
-app.use('/api/books',bookRoute);
+app.use('/books',bookRoute);
 
 const mongoDBURL = process.env.mongoDBURL
 mongoose

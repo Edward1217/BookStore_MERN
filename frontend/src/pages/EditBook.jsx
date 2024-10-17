@@ -14,7 +14,7 @@ function EditBook(props) {
     const { enqueueSnackbar } = useSnackbar();
     useEffect(()=>{
         setLoading(true);
-        axios.get(`/api/books/${id}`)
+        axios.get(`http://localhost:3001/books/${id}`)
             .then((response)=>{
                 setTitle(response.data.book.title);
                 setAuthor(response.data.book.author);
