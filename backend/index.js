@@ -3,30 +3,21 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import {Book} from "./models/bookModel.js";
 import bookRoute from './routes/booksRoute.js';
+import authRoute from './routes/authRoutes.js';
+import cookieParser from 'cookie-parser';
 import cors from 'cors';
 const app = express();
 dotenv.config();
 app.use(express.static('dist'))
 app.use(cors());
 
-// app.use(
-//     cors({
-//         original:'http://localhost:3001',
-//         method:['GET','POST','PUT','DELETE'],
-//         allowedHeaders:['Content-Type'],
-//     })
-// )
 //middleware for parsing request body
 app.use(express.json());
-
-
-//Route for get a response from server
-// app.get('/',(request,response)=>{
-//     console.log(request)
-//     return response.send('Welcome To MERN Stack Tutorial')
-// });
+app.use(cookieParser());
+app.use(express.urlencoded({extended:false}))
 
 app.use('/api/books',bookRoute);
+app.use('/api',authRoute);
 
 const mongoDBURL = process.env.mongoDBURL
 mongoose
