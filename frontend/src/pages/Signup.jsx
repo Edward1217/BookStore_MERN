@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 function Signup(props) {
   const navigate = useNavigate();
@@ -98,9 +98,9 @@ function Signup(props) {
 
             <p className="mt-10 text-center text-sm/6 text-gray-500">
               Already have a member?{' '}
-              <a href="/books/login" className="font-semibold text-indigo-600 hover:text-indigo-500">
-                Sign in
-              </a>
+              <Link to={'/books/login'}>
+                <span className="font-semibold text-indigo-600 hover:text-indigo-500">Sign in</span>
+              </Link>
             </p>
           </div>
         </div>
